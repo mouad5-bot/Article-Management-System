@@ -7,10 +7,6 @@
 ?>
 
 <?php
-    session_start();
-?>
-
-<?php
 	require_once('includes/session.php');
 ?>
 
@@ -25,8 +21,3 @@
 <?php
 	include('includes/footer.php');
 ?>
-
-	
-	
-
-

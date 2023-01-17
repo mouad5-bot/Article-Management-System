@@ -1,9 +1,6 @@
 <div id="singup-continer">
 	<div class="singup-continer">
 		<div class="main d-flex">
-			<div class="d-none d-sm-block col-6">
-				<img src="Assets/image/singup.png" alt="singup">
-			</div>
 			<div class="card mt-5 col-12 col-sm-4">
 				<div class="card-body">
 					<h1 class="card-title text-info text-center mb-3">Sign up</h1>
@@ -32,6 +29,9 @@
 						</div>	
 					</form>
 				</div>
+			</div>
+			<div class="d-none d-sm-block col-6" id="log-img">
+				<img src="Assets/image/log.png" alt="singup">
 			</div>
 		</div>
 	</div>
