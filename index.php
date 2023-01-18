@@ -1,6 +1,4 @@
 <?php
-    require_once('scripts/script.php');
-
     require_once('includes/head.php');
 
 	require_once('includes/session.php');

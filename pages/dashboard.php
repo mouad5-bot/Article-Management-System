@@ -34,10 +34,10 @@
 		<hr>
 		<div class="d-flex justify-content-between mt-5">
 			<div class='h3'>
-				<u>List of products :</u> 
+				<u>List of Articls :</u> 
 			</div>
 			<div class=" mb-5">
-				<a href="#modal-product" data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add Product</a>
+				<a href="#modal-product" data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add Articl</a>
 			</div>
 		</div>
         <div class="table-responsive">
@@ -46,12 +46,9 @@
 					<tr>
 						<th scope="col">#</th>
 						<th scope="col">image</th>
-						<th scope="col">Product </th>
-						<th scope="col">quantity</th>
-						<th scope="col">price</th>
+						<th scope="col">Title </th>
 						<th scope="col">category</th>
-						<th scope="col">Description</th>
-						<th scope="col"></th>
+						<th scope="col">Descrition</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
@@ -61,13 +58,9 @@
 						<td> test img</td>
 						<td> test </td>
 						<td> test</td>
-						<td> test</td>
-						<td> test</td>
 						<td title="">test...</td>
 						<td>
 							<a href="#"><button type="button" class="btn btn-outline-info">Edit</button></a>	
-						</td>
-						<td>	
 							<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button>
 						</td>
 					</tr>
@@ -77,5 +70,6 @@
     </main>
 
 	<?php
+    	require_once('../includes/modal.php');
 		require_once('../includes/footer.php');
 	?>
