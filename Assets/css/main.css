@@ -1,6 +1,6 @@
 .footer {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   text-align: center;
   margin-top: 4rem;
 }
@@ -26,31 +26,4 @@ a:hover {
   font-family: sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-body {
-  background: url(Assets/image/log.png);
-  background-size: cover;
-}
-
-#login-continer {
-  overflow: hidden;
-}
-#login-continer .main .card .card-body {
-  position: absolute;
-}
-#login-continer .main .card #imgLogin {
-  position: relative;
-  top: 50px;
-  left: 50px;
-}
-
-#singup-continer {
-  overflow: hidden;
-}
-#singup-continer .main .card .card-body {
-  position: absolute;
-}
-#singup-continer .main .card #log-img {
-  position: relative;
 }

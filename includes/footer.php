@@ -1,5 +1,5 @@
 	<!-- BEGIN #footer -->
-    <div class="footer">
+    <div class="footer text-center mt-5">
 			<p>©  2023 YouCode - All Rights Reserved.</p>
     </div>
 

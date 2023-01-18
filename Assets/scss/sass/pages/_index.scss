@@ -4,37 +4,30 @@
     box-sizing: border-box;
 }
 
-body{
-    background: url(Assets/image/log.png);
-    position: relative;
-}
+// #login-continer{
+//     overflow: hidden;
+//     .main{
+//         .card{
+//             .card-body{
+//                color: red;                
+//             }
+//             #imgLogin{
+//                 margin-top: 5rem;
+//             }
+//         }
+//     }
+// }
 
-#login-continer{
-    overflow: hidden;
-    .main{
-        .card{
-            .card-body{
-                position: absolute;                
-            }
-            #imgLogin{
-                position: relative;
-                top: 50px;
-                left: 50px;
-            }
-        }
-    }
-}
-
-#singup-continer{
-    overflow: hidden;
-    .main{
-        .card{
-            .card-body{
-                position: absolute;                
-            }
-            #log-img{
-                position: relative;
-            }
-        }
-    }
-}
+// #singup-continer{
+//     overflow: hidden;
+//     .main{
+//         .card{
+//             .card-body{
+//                 color: red;                    
+//             }
+//             #log-img{
+//                 margin-top: 5rem;                
+//             }
+//         }
+//     }
+// }

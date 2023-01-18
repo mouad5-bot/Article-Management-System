@@ -1,38 +1,31 @@
 <?php
-    include('../includes/head.php');
-?>
-
-<?php
-    include('../includes/navbar.php');
-?>
-	
-<?php
+    require_once('../includes/head.php');
+    require_once('../includes/navbar.php');
     session_start();
 ?>
 	
     <main class="container">
-
-		<div class="row row-cols-lg-4 row-cols-sm-2 m-3 justify-content-between">
+		<div class="row row-cols-lg-4 row-cols-sm-2 m-3 d-flex justify-content-between">
 			<div class="card text-black bg-light text-center" style="max-width: 18rem;">
-				<div class="card-header h4">category</div>
+				<div class="card-header h4">categories</div>
 				<div class="card-body">
 						<h5 class="card-title text-success"> test </h5>
 				</div>
 			</div>
 			<div class="card text-black bg-light text-center" style="max-width: 18rem;">
-				<div class="card-header h4">Product</div>
+				<div class="card-header h4">Articls</div>
 				<div class="card-body">
 					<h5 class="card-title text-success"> test </h5>
 				</div>
 			</div>
 			<div class="card text-black bg-light text-center" style="max-width: 18rem;">
-				<div class="card-header h4">Price </div>
+				<div class="card-header h4">Admins </div>
 				<div class="card-body">
 						<h5 class="card-title text-success"> test MAD</h5>
 				</div>
 			</div>
 			<div class="card text-black bg-light text-center"  style="max-width: 18rem;">
-				<div class="card-header h4 ">Admin</div>
+				<div class="card-header h4 ">Posts</div>
 				<div class="card-body">
 						<h5 class="card-title text-success"> test </h5>
 				</div>
@@ -63,23 +56,21 @@
 					</tr>
 				</thead>
 				<tbody>
-					
-				
-						<tr>
-							<th scope="row"> id</th>
-							<td> test img</td>
-							<td> test </td>
-							<td> test</td>
-							<td> test</td>
-							<td> test</td>
-							<td title="">test...</td>
-							<td>
-								<a href="#"><button type="button" class="btn btn-outline-info">Edit</button></a>	
-							</td>
-							<td>	
-								<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button>
-							</td>
-						</tr>
+					<tr>
+						<th scope="row"> id</th>
+						<td> test img</td>
+						<td> test </td>
+						<td> test</td>
+						<td> test</td>
+						<td> test</td>
+						<td title="">test...</td>
+						<td>
+							<a href="#"><button type="button" class="btn btn-outline-info">Edit</button></a>	
+						</td>
+						<td>	
+							<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>

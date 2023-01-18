@@ -7,4 +7,3 @@ sign.addEventListener("click",function(){
   login.style.display="none";
   singup.style.display="block";
 })
-

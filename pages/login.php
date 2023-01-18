@@ -1,13 +1,13 @@
 
 <div id="login-continer">
 	<div class="login-continer">
-		<div class="main d-flex">
+		<div class="row main d-flex justify-content-center"> 
 			<div class="card col-12 col-sm-4 mt-5">
 				<div class="card-body">
 					<h1 class="card-title text-info text-center mb-3">Log in</h1>
 
 					<form action="../config/scripts.php" method="POST">
-						<div class="">
+						<div class="form-login">
 							<div class="mb-3">
 								<label for="email" class="form-label">Adress email</label>
 								<input type="email" class="form-control" id="email"  name="email" 
@@ -26,9 +26,9 @@
 					</form>
 				</div>	
 			</div>
-			<div class="col-7 d-none d-sm-block" id="imgLogin">
+			<!-- <div class="col-7 d-none d-sm-block" id="imgLogin">
 				<img src="Assets/image/log.png" alt="login">
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
