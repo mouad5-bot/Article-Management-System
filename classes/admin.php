@@ -1,8 +1,7 @@
 <?php
-include_once 'database.class.php';
 session_start();
 
-    abstract class Admin extends Database{
+    class Admin extends Database{
         protected $id = NULL;
         protected $firstName;
         protected $lastName;
@@ -60,8 +59,17 @@ session_start();
             $this->email = $dbObject->email;
         }
 
-        public static function viewLandingPage(){
-            echo "test landing page";
+        public function login($email, $password)
+        {
+            $req = "SELECT * FROM `admin` WHERE password = $password && email = $email";
+
+            // MODEFY AND VERIFY THIS CONTENT
+
+            // $stmt = $this->connect()->prepare($sql);
+            // $stmt->execute();
+            // $dbAdmin = $stmt->fetch(PDO::FETCH_OBJ);
+            // parent::getObject($dbAdmin);
+
         }
 
         public function addSession(){

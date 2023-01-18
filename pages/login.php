@@ -5,7 +5,7 @@
 				<div class="card-body">
 					<h1 class="card-title text-info text-center mb-3">Log in</h1>
 
-					<form action="../scripts/login.php" method="POST">
+					<form action="scripts/login.php" method="POST">
 						<div class="form-login">
 							<div class="mb-3">
 								<label for="email" class="form-label">Adress email</label>
