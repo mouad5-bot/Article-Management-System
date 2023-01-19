@@ -1,14 +1,16 @@
 
 <?php require_once '../config/connection.php'; 
-      require_once '../classes/admin.php';
+      require_once '../classes/login.php';
 
-    if (isset($_POST['login'])) login();
+    if (isset($_POST['login'])) loginCheck();
 
-    function login(){
+    function loginCheck(){
         $admin = new Admin();
 
         $admin->login($_POST['email'], $_POST['password'] );
 
 
-    }
+    } 
+
+    
 ?>

@@ -61,15 +61,15 @@ session_start();
 
         public function login($email, $password)
         {
-            $req = "SELECT * FROM `admin` WHERE password = $password && email = $email";
-
-            // MODEFY AND VERIFY THIS CONTENT
-
-            // $stmt = $this->connect()->prepare($sql);
-            // $stmt->execute();
-            // $dbAdmin = $stmt->fetch(PDO::FETCH_OBJ);
-            // parent::getObject($dbAdmin);
-
+            $sql = "SELECT * FROM `admin` WHERE password = ? AND email = ?";
+            
+            $conn = Database::connect();
+            $stmt = $conn->prepare($sql); 
+            $stmt->execute([$email, $password]);   
+            $arr = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            header("Location: ../pages/dashboard.php");
+            
         }
 
         public function addSession(){
