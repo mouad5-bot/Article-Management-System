@@ -1,4 +1,5 @@
 <?php
+require_once '../config/connection.php'; 
 session_start();
 
     class Admin extends Database{
@@ -70,6 +71,23 @@ session_start();
             
             header("Location: ../pages/dashboard.php");
             
+        }
+
+        
+        public function addAdmin($admin){
+
+            // echo "<pre>";
+            // print_r($admin);
+            // echo "</pre>";
+            // die();
+                
+            $conn = new Database();
+            $sql1 = "INSERT INTO admin(first_name, last_name, email, password) values(?,?,?,?)";
+            $res = $conn->connect()->prepare($sql1);
+            $res->execute([$admin->firstName, $this->lastName, $this->email, $this->password]);
+
+            //echo"<script>alert('successfully');document.location='../index.php'</script>";
+        
         }
 
         public function addSession(){

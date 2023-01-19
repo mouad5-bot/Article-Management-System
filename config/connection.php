@@ -16,14 +16,5 @@ class Database
             echo $e->getMessage();
         }
     }
-
-    // public function __construct($host, $user, $password, $dbname) 
-    // {
-    //     $this->host = $host;
-    //     $this->user = $user;
-    //     $this->password = $password;
-    //     $this->dbname = $dbname;
-    //     $this->dbh = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->password);
-    // }
 }
 ?>
