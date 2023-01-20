@@ -10,12 +10,12 @@
 							<div class="mb-3">
 								<label for="email" class="form-label">Adress email</label>
 								<input type="email" class="form-control" id="email"  name="email" 
-										placeholder="veuillez entrez votre email" required>
+										placeholder="veuillez entrez votre email">
 							</div>
 							<div class="mb-3">
 								<label for="password"  class="form-label">password</label>
 								<input type="password" class="form-control" id="password" name="password" 
-										placeholder="veuiller entrez votre mot de pass " >
+										placeholder="veuiller entrez votre mot de pass ">
 							</div>
 							<div class="d-grid gap-2">
 								<button class="btn btn-info text-white" onclick="goToSingup()" type="submit" name="login">log in</button>

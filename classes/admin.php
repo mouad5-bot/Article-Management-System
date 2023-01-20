@@ -60,34 +60,45 @@ session_start();
             $this->email = $dbObject->email;
         }
 
-        public function login($email, $password)
+        public function isExistAdmin($email)
         {
-            $sql = "SELECT * FROM `admin` WHERE password = ? AND email = ?";
-            
-            $conn = Database::connect();
-            $stmt = $conn->prepare($sql); 
-            $stmt->execute([$email, $password]);   
-            $arr = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            header("Location: ../pages/dashboard.php");
+            $sql = "SELECT * FROM `admin` WHERE email =(?)";
+
+            $stmt = Database::connect()->prepare($sql);
+            $stmt->execute([$email]);
+
+            return $stmt->rowCount();
             
         }
 
-        
-        public function addAdmin($admin){
+        public function loginAdmin() 
+        { 
+            $conn = new Database();
 
-            // echo "<pre>";
-            // print_r($admin);
-            // echo "</pre>";
-            // die();
+            $sql = "SELECT * FROM `admin` WHERE email = ? AND password = ?;";
+            $stmt =  $conn->connect()->prepare($sql);
+            $stmt->execute([$this->email, $this->password]);
+            $admin = $stmt -> fetch(PDO::FETCH_ASSOC);
+            if ($stmt->rowCount() > 0) {
                 
+                $_SESSION['name'] = $admin['first_name'];
+                $_SESSION['last-name'] = $admin['last_name'];
+                $_SESSION['id'] = $admin['id'];
+
+                echo"<script>alert('successfully');document.location='../pages/dashboard.php'</script>";  
+                
+            } else {
+                echo"<script>alert('incorrect inputs');document.location='../index.php'</script>";
+            }
+        }
+
+        /*********  signup: *********/
+        public function addAdmin($admin)
+        {                
             $conn = new Database();
             $sql1 = "INSERT INTO admin(first_name, last_name, email, password) values(?,?,?,?)";
             $res = $conn->connect()->prepare($sql1);
-            $res->execute([$admin->firstName, $this->lastName, $this->email, $this->password]);
-
-            //echo"<script>alert('successfully');document.location='../index.php'</script>";
-        
+            $res->execute([$admin->firstName, $this->lastName, $this->email, $this->password]);        
         }
 
         public function addSession(){

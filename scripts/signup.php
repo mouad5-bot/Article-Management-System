@@ -3,7 +3,6 @@
 
     if (isset($_POST['singup'])) signUp();
 
-
     function signUp(){
 
         $admin = new Admin();
