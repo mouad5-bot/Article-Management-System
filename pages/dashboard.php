@@ -46,12 +46,44 @@
 			</div>
 		</div>
 		<hr>
+		<!--============== crud category ===============-->
+		<div class="d-flex justify-content-between mt-5">
+			<div class='h3'>
+				<u>List of categories :</u> 
+			</div>
+			<div class=" mb-5">
+				<a href="#modal-cat " data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add category</a>
+			</div>
+		</div>
+        <div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">name</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"> id</th>
+						<td> test categ</td>
+						<td>
+							<a href="#"><button type="button" class="btn btn-outline-info">Edit</button></a>	
+							<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--============== crud articl ===============-->
+		<hr>
 		<div class="d-flex justify-content-between mt-5">
 			<div class='h3'>
 				<u>List of Articls :</u> 
 			</div>
 			<div class=" mb-5">
-				<a href="#modal-product" data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add Articl</a>
+				<a href="#modal-articl" data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add Articl</a>
 			</div>
 		</div>
         <div class="table-responsive">
@@ -85,5 +117,6 @@
 
 	<?php
     	require_once('../includes/modal.php');
+    	require_once('../includes/modalCat.php');
 		require_once('../includes/footer.php');
 	?>
