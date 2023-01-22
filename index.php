@@ -7,5 +7,5 @@
 
 	require_once('pages/singup.php');
 
-	require_once('includes/footer.php');
+	require_once('includes/fermeture.php');
 ?>

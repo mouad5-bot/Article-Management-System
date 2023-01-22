@@ -2,14 +2,14 @@
 <div class="modal fade" id="modal-cat">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="config/scripts.php" method="POST" id="form-cat" enctype="multipart/form-data">
+				<form action="../scripts/category.php" method="POST" id="form-cat" enctype="multipart/form-data">
 					<div class="modal-header">
-						<h5 class="modal-title">Add Articl</h5>
+						<h5 class="modal-title">Add category</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
 						<!-- This Input Allows Storing cat Index  -->
-						<input type="hidden" id="cat-id">
+						<input type="hidden" name="id" id="cat-id">
 						<div class="mb-3">
 							<label class="form-label">name of category</label>
 							<input  type="text" class="form-control" name="name" id="category"/>

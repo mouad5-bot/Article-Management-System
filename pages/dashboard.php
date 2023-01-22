@@ -52,7 +52,7 @@
 				<u>List of categories :</u> 
 			</div>
 			<div class=" mb-5">
-				<a href="#modal-cat " data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add category</a>
+				<a href="#modal-cat" data-bs-toggle="modal"  class="btn btn-success btn-rounded px-4 rounded-pill">Add category</a>
 			</div>
 		</div>
         <div class="table-responsive">
