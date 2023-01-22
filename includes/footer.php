@@ -6,7 +6,7 @@
 <!-- ---------------------------------------------------------------------------------------- -->
     
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="m-0">
+<div class="m-0 mt-5">
   <!-- Footer -->
   <footer
           class="d-print-none text-center text-lg-start text-white"
@@ -116,10 +116,10 @@
               Get the app 
             </h6>
             <p>
-              <span class="text-white">YouTickets for android</span>
+              <span class="text-white">CultureDev for android</span>
             </p>
             <p>
-              <span class="text-white">YouTickets for ios</span>
+              <span class="text-white">CultureDev for ios</span>
             </p>
             <p>
               <span class="text-white">Mobile site</span>
@@ -187,14 +187,15 @@
     <!-- Grid container -->
   </footer>
   <!-- Footer -->
-
-
     <!-- ================== BEGIN core-js ================== -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-    <script>CKEDITOR.replace( 'editor' );</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="../Assets/js/sweetalert.js"></script>
     <script src="../Assets/js/main.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- ================== END core-js ================== -->
 </body>
 </html>	

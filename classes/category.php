@@ -41,4 +41,31 @@ session_start();
             $conn= $db->connect()->prepare($sql);
             $conn->execute(array($this->name));
         }
+
+        public function getCategory()
+        {
+            $db = new Database();
+            $sql = "SELECT * FROM `category`";
+            $stmt = $db->connect()->prepare($sql);
+            $stmt->execute();
+            $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       
+            return $categories;
+        }
+        
+        public function update($newName)
+        {
+            $this->name = $newName;
+            $stmt = $this->pdo->prepare("UPDATE categories SET name = :name WHERE id = :id");
+            $stmt->execute(['name' => $newName, 'id' => $this->id]);
+
+        }
+        public function delete($id)
+        {
+            $db = new Database();
+            $req = "DELETE FROM category WHERE id = :id";
+            $stmt = $db->connect()->prepare($req);
+            $stmt -> bindParam(':id',$id);
+            $stmt->execute();
+        }
     }
