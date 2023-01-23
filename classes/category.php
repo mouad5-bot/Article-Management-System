@@ -27,11 +27,11 @@ session_start();
             return $this->firstName ;
         }
         
-        public function getObject($dbObject)
-        {
-            $this->id = $dbObject->id;
-            $this->name = $dbObject->name;
-        }
+        // public function getObject($dbObject)
+        // {
+        //     $this->id = $dbObject->id;
+        //     $this->name = $dbObject->name;
+        // }
 
         /*********  crud category: *********/
         public function addCategory()

@@ -51,14 +51,14 @@ session_start();
             return $this->email  ;
         }
         
-        public function getObject($dbObject)
-        {
-            $this->id = $dbObject->id;
-            $this->firstName = $dbObject->first_name;
-            $this->lasttName = $dbObject->last_name;
-            $this->password = $dbObject->password;
-            $this->email = $dbObject->email;
-        }
+        // public function getObject($dbObject)
+        // {
+        //     $this->id = $dbObject->id;
+        //     $this->firstName = $dbObject->first_name;
+        //     $this->lasttName = $dbObject->last_name;
+        //     $this->password = $dbObject->password;
+        //     $this->email = $dbObject->email;
+        // }
 
         public function isExistAdmin($email)
         {
