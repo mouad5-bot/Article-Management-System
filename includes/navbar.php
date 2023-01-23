@@ -1,7 +1,7 @@
 	<!-- BEGIN #navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<div class="logo text-white"> 
-			<span id="logo-name"> <h3> CultureDev.to </h3> </span>
+			<span id="logo-name ms-2"> <h3> CultureDev.to </h3> </span>
 		</div>
 		<div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01" >
 			<span class="text-white h4"><i class="bi bi-person-circle"></i>  test</span>  w

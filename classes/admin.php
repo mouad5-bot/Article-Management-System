@@ -107,4 +107,5 @@ session_start();
           $_SESSION['id'] = $this->id;
         }
     }
+
 ?>

@@ -1,7 +1,7 @@
 <div id="login-continer">
 	<div class="login-continer">
-		<div class="row main d-flex justify-content-center"> 
-			<div class="card col-12 col-sm-4 mt-5">
+		<div class="row main"> 
+			<div class="card col-12 col-sm-4 m-auto mt-5">
 				<div class="card-body">
 					<h1 class="card-title text-info text-center mb-3">Log in</h1>
 
