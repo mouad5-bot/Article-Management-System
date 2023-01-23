@@ -11,8 +11,7 @@
 
     function saveArticle()
     {
-        $cat = new Article();
-        // $cat->setId($_POST['id']);   
+        $cat = new Article();   
         // $cat->uploadimage();
         $cat->setCategory($_POST['category']);
         $cat->setTitle($_POST['title']);
@@ -21,6 +20,11 @@
 
         header('location: ../pages/dashboard.php');
     }
+
+    //affichage d'article
+    $post = new Article();
+    $postData = array();
+    $postData = $post->showPosts();
 
     // function uploadimage(){
         // if (isset($_FILES['image']))  image();

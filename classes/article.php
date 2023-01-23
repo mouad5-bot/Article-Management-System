@@ -57,8 +57,18 @@ require_once '../config/connection.php';
 
             $sql = "INSERT INTO post(image , category, title, description) VALUES(?,?,?,?)";
             $conn= $db->connect()->prepare($sql);
-            $conn->execute(array($this->name));
             $conn->execute([$this->image, $this->category, $this->title, $this->description ]);
+        }
+
+        function showPosts()
+        {
+            $db = new Database();
+            $sql = "SELECT * FROM `post`";
+            $stmt = $db->connect()->prepare($sql);
+            $stmt->execute();
+            $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $posts;
         }
 
         
