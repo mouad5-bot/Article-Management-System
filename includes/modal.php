@@ -2,17 +2,17 @@
 <div class="modal fade" id="modal-articl">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="config/scripts.php" method="POST" id="form-articl" enctype="multipart/form-data">
+				<form action="../scripts/article.php" method="POST" id="form-articl" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Articl</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
 						<!-- This Input Allows Storing articl Index  -->
-						<input type="hidden" id="articl-id">
+						<input type="hidden" name="id" id="articl-id">
 						<div class="mb-3">
 							<label class="form-label">Title</label>
-							<input  type="text" class="form-control" name="name" id="title"/>
+							<input  type="text" class="form-control" name="title" id="title"/>
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Category</label> 
@@ -44,7 +44,7 @@
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="save_articl   class="btn btn-primary articl-action-btn" id="articl-save-btn">Save</button>
+						<button type="submit" name="save_articl"   class="btn btn-primary articl-action-btn" id="articl-save-btn">Save</button>
 					</div>
 				</form>
 			</div>

@@ -1,5 +1,6 @@
 <?php
     include('../scripts/category.php');
+    include('../scripts/article.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +85,8 @@
 							</button>
 
 							<button type="button" 
-							onclick="deleteCategory(<?=$row['id'] ?>)" id="delete-category"name="delete" 
+							onclick="deleteCategory(<?=$row['id'] ?>)" 
+							id="delete-category"name="delete" 
 							class="btn btn-outline-danger">
 							Delete</button>
 						</td>
@@ -124,7 +126,7 @@
 						<td title="">test...</td>
 						<td>
 							<a href="#"><button type="button" class="btn btn-outline-info">Edit</button></a>	
-							<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button>
+							<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button></a>
 						</td>
 					</tr>
 				</tbody>
