@@ -3,9 +3,9 @@
 
     //Routing :
     if (isset($_POST['save_cat'])) category();
-    if (isset($_GET['id_edit'])) updateCat();
+    if (isset($_POST['edit_cat'])) updateCat(); 
     if (isset($_POST['dcategory'])) deleteCat($_POST['dcategory']);
- var_dump(@$_POST['dcategory']);
+    
     // ************** save category ****************//
     function category()
     {
@@ -25,9 +25,12 @@
     // ************ update | dalate : category ***********//
     function updateCat()
     {
-        $categoryId = $_GET['id'];
-        $category = new Category($categoryId, '');
-        $category->update($newName);
+        //var_dump($_POST);
+        $category = new Category();
+        $category->setId((int)$_POST['id']);
+        $res= $category->update($_POST['name']);
+        if($res) 
+            header("Location: ../pages/dashboard.php");
     }
 
     function deleteCat($id)

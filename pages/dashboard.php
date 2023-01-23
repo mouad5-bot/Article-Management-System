@@ -18,7 +18,6 @@
 <body>
 <?php
     require_once('../includes/navbar.php');
-    // session_start();
 ?>
 	<!--============== statistics ===============-->
     <main class="container">
@@ -78,14 +77,16 @@
 						<th scope="row"> <?=$row['id'] ?> </th>
 						<td> <?=$row['name'] ?> </td>
 						<td> 
-							<button type="button" 
-								onclick="getdata(<?=$row['id'] ?> , `<?=$row['name'] ?>`)" 
+							<button type="button" onclick="getdata(<?=$row['id'] ?> , `<?=$row['name'] ?>`)" 
 								data-bs-target="#modal-edit" data-bs-toggle="modal" 
 								id="edit-category" class="btn btn-outline-info"
 								>Edit
 							</button>
 
-							<button type="button" onclick="deleteCategory(<?=$row['id'] ?>)" id="delete-category" name="delete" class="btn btn-outline-danger">Delete</button>
+							<button type="button" 
+							onclick="deleteCategory(<?=$row['id'] ?>)" id="delete-category"name="delete" 
+							class="btn btn-outline-danger">
+							Delete</button>
 						</td>
 					</tr>
 				<?php } ?>	

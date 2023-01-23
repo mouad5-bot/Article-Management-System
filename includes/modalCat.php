@@ -16,8 +16,8 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="save_cat" class="btn btn-warning cat-action-btn" id="cat-save-btn">Save</button>
+						<button class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
+						<button type="submit" name="save_cat" class="btn btn-primary cat-action-btn" id="cat-save-btn">Save</button>
 					</div>
 				</form>
 			</div>
@@ -42,8 +42,8 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="edit_cat"   class="btn btn-warning cat-action-btn" id="cat-edit-btn">Edit </button>
+						<button class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
+						<button type="submit" name="edit_cat" class="btn btn-warning cat-action-btn" id="cat-edit-btn">Edit </button>
 					</div>
 				</form>
 			</div>

@@ -8,7 +8,7 @@ session_start();
 
         public function __construct ($id=NULL, $name="")
         {
-            $this->id   = NULL;
+            $this->id   = $id;
             $this->name = $name;
         }
 
@@ -55,10 +55,11 @@ session_start();
         
         public function update($newName)
         {
+            $db = new Database();
             $this->name = $newName;
-            $stmt = $this->pdo->prepare("UPDATE categories SET name = :name WHERE id = :id");
-            $stmt->execute(['name' => $newName, 'id' => $this->id]);
-
+            $req = "UPDATE category SET name = ? WHERE id = ?";
+            $stmt = $db->connect()->prepare($req);
+            return $stmt->execute([$newName, $this->id]);   
         }
         public function delete($id)
         {
