@@ -1,6 +1,5 @@
 <?php
 require_once '../config/connection.php'; 
-session_start();
 
     class Category extends Database{
         protected $id = NULL;
@@ -49,7 +48,7 @@ session_start();
             $stmt = $db->connect()->prepare($sql);
             $stmt->execute();
             $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-       
+            
             return $categories;
         }
         

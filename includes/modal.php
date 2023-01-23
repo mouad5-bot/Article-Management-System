@@ -20,14 +20,19 @@
 							    <option value="">Please select</option>
                                 <?php 
                                     // $table = 'categorie';
-                                    // $data = getdata($table);
-                                    // foreach ($data as $categorie) {
-                                    //     echo "<option value=".$categorie['id']."> $categorie[name] </option>";
-                                    // }
+                                    $data = $catData;
+                                    foreach ($data as $category) {
+                                        echo "<option value=".$category['id']."> $category[name] </option>";
+                                    }
+
+									// echo '<pre>';
+									// var_dump($catData);
+									// echo '</pre>';
                                 ?>
-                                    <option value="">Please select</option> 
+								
+                                    <!-- <option value="">Please select</option> 
                                     <option value="1">Ordinateurs </option>
-                                    <option value="2">Accessoires </option>
+                                    <option value="2">Accessoires </option> -->
 
 							</select>
 						</div>
