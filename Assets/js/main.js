@@ -44,3 +44,13 @@ function deleteCategory(idd){
       }
   });
 }
+
+function getdataArticl(id , image, title, category, description) {
+  let res = document.getElementById('articl-id').value = id;
+  document.getElementById('image-edit-articl').value = image;
+  document.getElementById('title-edit-articl').value = title;
+  let r = document.getElementById('category-edit-articl').value = category;
+  document.querySelector('.description-edit-articl').value = description;
+
+  console.log(res +'  '+ r)
+}

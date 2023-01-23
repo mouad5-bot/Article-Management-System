@@ -55,7 +55,7 @@ require_once '../config/connection.php';
         {
             $db = new Database();
 
-            $sql = "INSERT INTO post(image , category, title, description) VALUES(?,?,?,?)";
+            $sql = "INSERT INTO post(image , title, category, description) VALUES(?,?,?,?)";
             $conn= $db->connect()->prepare($sql);
             $conn->execute([$this->image, $this->category, $this->title, $this->description ]);
         }
@@ -95,46 +95,46 @@ require_once '../config/connection.php';
         // }
     }
 
-    // function image()
-        // {
-        //     $img_name = $_FILES['image']['name'];
-        //     $img_size = $_FILES['image']['size'];
-        //     $tmp_name = $_FILES['image']['tmp_name'];
-        //     $error    = $_FILES['image']['error'];
-        //     $new_img_name = "";
+    function uploadimage()
+        {
+            $img_name = $_FILES['image']['name'];
+            $img_size = $_FILES['image']['size'];
+            $tmp_name = $_FILES['image']['tmp_name'];
+            $error    = $_FILES['image']['error'];
+            $new_img_name = "";
 
-        //     if ($error === 0)
-        //     {
-        //         if ($img_size > 170000) 
-        //         {
-        //             $_SESSION['error'] = "Sorry, your file is too large.";
-        //             header('location: ../index.php');
-        //         }
-        //         else
-        //         {
-        //             // ex = extension  | lc = lowerCase 
-        //             $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); 
-        //             $img_ex_lc = strtolower($img_ex);
+            if ($error === 0)
+            {
+                if ($img_size > 170000) 
+                {
+                    $_SESSION['error'] = "Sorry, your file is too large.";
+                    header('location: ../index.php');
+                }
+                else
+                {
+                    // ex = extension  | lc = lowerCase 
+                    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); 
+                    $img_ex_lc = strtolower($img_ex);
 
-        //             $allowed_exs = array("jpg", "jpeg", "png"); 
+                    $allowed_exs = array("jpg", "jpeg", "png"); 
 
-        //             if (in_array($img_ex_lc, $allowed_exs)) 
-        //             {
-        //                 $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
-        //                 $img_upload_path = '../Assets/upload_image/'.$new_img_name;
-        //                 move_uploaded_file($tmp_name, $img_upload_path);
-        //             }
-        //             else {
-        //                 $_SESSION['error'] = "You can't upload files of this type";
-        //                 header('location: ../index.php'); 
-        //             }
-        //         }
-        //     }
-        //     else
-        //     {
-        //         $_SESSION['error'] = 'unknown error occurred!';
-        //         header('location: ../index.php'); 
+                    if (in_array($img_ex_lc, $allowed_exs)) 
+                    {
+                        $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                        $img_upload_path = '../Assets/upload_image/'.$new_img_name;
+                        move_uploaded_file($tmp_name, $img_upload_path);
+                    }
+                    else {
+                        $_SESSION['error'] = "You can't upload files of this type";
+                        header('location: ../index.php'); 
+                    }
+                }
+            }
+            else
+            {
+                $_SESSION['error'] = 'unknown error occurred!';
+                header('location: ../index.php'); 
                 
-        //     }
-        //     return $new_img_name;
-        // }
+            }
+            return $new_img_name;
+        }
