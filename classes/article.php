@@ -51,13 +51,13 @@ require_once '../config/connection.php';
         }
 
         /*********  crud Post: *********/
-        public function addPost()
+        public function addPost($image)
         {
             $db = new Database();
 
             $sql = "INSERT INTO post(image, title, category , description) VALUES(?,?,?,?)";
             $conn= $db->connect()->prepare($sql);
-            $conn->execute([$this->image, $this->title,  $this->category, $this->description ]);
+            $conn->execute([$image, $this->title,  $this->category, $this->description ]);
         }
 
         function showPosts()
@@ -82,8 +82,7 @@ require_once '../config/connection.php';
             $this->description = $des;
             $req = "UPDATE post SET image = ?, title = ?, category = ?, description = ? WHERE id = ?";
             $stmt = $db->connect()->prepare($req);
-            return $stmt->execute( [$img, $title, $cat, $des, $this->id]);   
-            // [$img, $title, $cat, $des, $this->id]
+            return $stmt->execute( [$img, $title, $cat, $des, $this->id]);  
         }
 
         // public function delete($id)
@@ -110,7 +109,7 @@ require_once '../config/connection.php';
                     if ($img_size > 170000) 
                     {
                         $_SESSION['error'] = "Sorry, your file is too large.";
-                        header('location: ../index.php');
+                        header('location: ../pages/dashboard.php');
                     }
                     else
                     {
@@ -128,14 +127,14 @@ require_once '../config/connection.php';
                         }
                         else {
                             $_SESSION['error'] = "You can't upload files of this type";
-                            header('location: ../index.php'); 
+                            header('location: ../pages/dashboard.php'); 
                         }
                     }
                 }
                 else
                 {
                     $_SESSION['error'] = 'unknown error occurred!';
-                    header('location: ../index.php'); 
+                    header('location: ../pages/dashboard.php'); 
                     
                 }
                 return $new_img_name;

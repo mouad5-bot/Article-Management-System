@@ -126,7 +126,7 @@
 				
 					<tr id="post<?=$ligne['id'] ?>">
 						<th scope="row"> <?=$ligne['id'] ?></th>
-						<td> <?=$ligne['image'] ?></td>
+						<td> <img src="../Assets/upload_image/<?=$ligne['image']?>" alt="articlImage" style=width:3rem; > </td>
 						<td> <?=$ligne['title'] ?></td>
 						<td> <?=$ligne['category'] ?> </td>
 						<td title=""><?=$ligne['description'] ?></td>

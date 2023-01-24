@@ -1,4 +1,5 @@
 CKEDITOR.replace("editor");
+CKEDITOR.replace("description-edit-articl");
 
 /********  dashboard update  popup modal ********/
 // alert('testttt');
@@ -56,5 +57,5 @@ function getdataArticl(id, image, title, category, description)
   document.getElementById('image-edit-articl').value = image;
   document.getElementById("title-edit-articl").value = title;
   document.getElementById("category-edit-articl").value = category;
-  document.querySelector(".description-edit-articl").value = description;
+  document.getElementById("description-edit-articl").value = description;
 }

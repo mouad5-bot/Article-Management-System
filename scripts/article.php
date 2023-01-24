@@ -12,11 +12,11 @@
     function saveArticle()
     {
         $cat = new Article();
-        $cat->uploadimage();
+        $image =$cat->uploadimage();
         $cat->setTitle($_POST['add_title_post']);
         $cat->setCategory($_POST['category']);
         $cat->setDescription($_POST['description']);
-        $cat->addPost();
+        $cat->addPost($image);
 
         header('location: ../pages/dashboard.php');
     }

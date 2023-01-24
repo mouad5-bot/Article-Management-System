@@ -38,8 +38,8 @@
 						</div>
 						<div class="mb-2">
 							<label class="form-label">image</label> 
-							<!-- <input type="file" class="form-control" id="inputGroupFile04" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload"> -->
-							<input type="file" [(ngModel)]="examen_bestand" name="examen_bestand" class="form-control" id="exampleInputFile" aria-describedby="fileHelp" (change)="fileChanged($event)">
+							<input type="file" class="form-control" id="inputGroupFile04" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+							<!-- <input type="file" [(ngModel)]="examen_bestand" name="examen_bestand" class="form-control" id="exampleInputFile" aria-describedby="fileHelp" (change)="fileChanged($event)"> -->
 
 						</div>
 						<div class="mb-0">
@@ -94,7 +94,7 @@
 						</div>
 						<div class="mb-0">
 							<label class="form-label">Description</label>
-    						<textarea name="description" class="description-edit-articl" id="editor"></textarea>
+    						<textarea name="description" id="description-edit-articl"></textarea>
 						</div>
 					
 					</div>
