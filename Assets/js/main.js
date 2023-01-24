@@ -59,10 +59,10 @@ function deleteCategory(idd) {
 function getdataArticl(id, image, title, category, description) 
 {
   document.getElementById("id-edit-articl").value = id;
-  document.getElementById('image-edit-articl').value = image;
   document.getElementById("title-edit-articl").value = title;
   document.getElementById("category-edit-articl").value = category;
-  document.getElementById("description-edit-articl").value = description;
+  CKEDITOR.instances['description-edit-articl'].setData(description);
+  // document.getElementById("description-edit-articl").value = description;
 }
 
 

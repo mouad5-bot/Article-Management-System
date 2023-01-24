@@ -7,8 +7,6 @@
     if (isset($_POST['dPost'])) deletePost($_POST['dPost']);
 
     // ************** save Post ****************//
-
-
     function saveArticle()
     {
         $cat = new Article();
@@ -25,15 +23,10 @@
     $post = new Article();
     $postData = array();
     $postData = $post->showPosts();
-
-    // function uploadimage(){
-        // if (isset($_FILES['image']))  image();
-    // }
     
     // ************ update | delate : post ***********//
     function updateArt()
     {
-        var_dump($_POST);
         $art = new Article();
         $art->setId($_POST['id']);
         $res= $art->update($_FILES['image'],  $_POST['title'], $_POST['category'], $_POST['description']);

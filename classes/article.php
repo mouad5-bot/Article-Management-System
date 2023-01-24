@@ -63,11 +63,16 @@ require_once '../config/connection.php';
         function showPosts()
         {
             $db = new Database();
-            $sql = "SELECT * FROM `post`";
+            // $sql = "SELECT * FROM `post`";
+            $sql = "SELECT p.id, p.image, p.title, c.name as category, p.description, c.id as cat_id FROM post p inner join category c on p.category = c.id";            
             $stmt = $db->connect()->prepare($sql);
             $stmt->execute();
             $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
+            // echo '<pre>';
+            // var_dump($posts); 
+            // echo '</pre>'; 
+            // die;
+
             return $posts;
         }
 
@@ -81,6 +86,7 @@ require_once '../config/connection.php';
             $this->category = $cat;
             $this->description = $des;
             $req = "UPDATE post SET image = ?, title = ?, category = ?, description = ? WHERE id = ?";
+
             $stmt = $db->connect()->prepare($req);
             return $stmt->execute( [$img, $title, $cat, $des, $this->id]);  
         }
@@ -94,7 +100,7 @@ require_once '../config/connection.php';
             $stmt->execute();
         }
 
-    function uploadimage()
+        function uploadimage()
         {
             if (isset($_FILES['image']))
             {

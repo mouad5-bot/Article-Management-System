@@ -1,6 +1,7 @@
 <?php
     include('../scripts/category.php');
     include('../scripts/article.php');
+    include('../scripts/statistique.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,7 +133,7 @@
 						<td title=""><?=$ligne['description'] ?></td>
 						<td>
 							<button type="button" onclick="getdataArticl(<?=$ligne['id']?> , `<?=$ligne['image']?>` , `<?=$ligne['title']?>` ,
-							 `<?=$ligne['category']?>` , `<?=$ligne['description']?>`)"
+							 `<?=$ligne['cat_id']?>` , `<?=$ligne['description']?>`)"
 							 data-bs-target="#modal-edit-post" data-bs-toggle="modal"
 							 class="btn btn-outline-info">Edit</button>
 							
