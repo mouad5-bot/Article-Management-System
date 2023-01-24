@@ -4,7 +4,7 @@
     //Routing :
     if (isset($_POST['save_articl'])) saveArticle();
     if (isset($_POST['edit_articl'])) updateArt(); 
-    // if (isset($_POST['delet_articl'])) deleteArt($_POST['dcategory']);
+    if (isset($_POST['dPost'])) deletePost($_POST['dPost']);
 
     // ************** save Post ****************//
 
@@ -42,10 +42,10 @@
             header("Location: ../pages/dashboard.php");
     }
 
-    // function deletePost($id)
-    // {
-        // $art = new Article();
-        // $art->delete($id);
-    // }
+    function deletePost($id)
+    {
+        $art = new Article();
+        $art->delete($id);
+    }
 ?>
 

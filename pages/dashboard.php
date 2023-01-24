@@ -85,7 +85,7 @@
 							</button>
 
 							<button type="button" 
-							onclick="deleteCategory(<?=$row['id'] ?>)" 
+							onclick="deleteCategory(<?=$row['id'] ?>)"  
 							id="delete-category"name="delete" 
 							class="btn btn-outline-danger">
 							Delete</button>
@@ -137,7 +137,7 @@
 							 class="btn btn-outline-info">Edit</button>
 							
 
-							<a href="#"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+							<a href="#"><button type="button" onclick="deleteArticl(<?=$ligne['id'] ?>)"  class="btn btn-outline-danger">Delete</button></a>
 								
 						</td>
 					</tr>

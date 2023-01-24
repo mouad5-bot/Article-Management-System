@@ -85,14 +85,14 @@ require_once '../config/connection.php';
             return $stmt->execute( [$img, $title, $cat, $des, $this->id]);  
         }
 
-        // public function delete($id)
-        // {
-        //     $db = new Database();
-        //     $req = "DELETE FROM category WHERE id = :id";
-        //     $stmt = $db->connect()->prepare($req);
-        //     $stmt -> bindParam(':id',$id);
-        //     $stmt->execute();
-        // }
+        public function delete($id)
+        {
+            $db = new Database();
+            $req = "DELETE FROM post WHERE id = :id";
+            $stmt = $db->connect()->prepare($req);
+            $stmt -> bindParam(':id',$id);
+            $stmt->execute();
+        }
 
     function uploadimage()
         {
