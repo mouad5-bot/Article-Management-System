@@ -1,5 +1,7 @@
 <?php
     include('../scripts/category.php');
+    include('../scripts/article.php');
+    include('../scripts/statistique.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +86,8 @@
 							</button>
 
 							<button type="button" 
-							onclick="deleteCategory(<?=$row['id'] ?>)" id="delete-category"name="delete" 
+							onclick="deleteCategory(<?=$row['id'] ?>)"  
+							id="delete-category"name="delete" 
 							class="btn btn-outline-danger">
 							Delete</button>
 						</td>
@@ -116,17 +119,30 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row"> id</th>
-						<td> test img</td>
-						<td> test </td>
-						<td> test</td>
-						<td title="">test...</td>
+				<?php
+					$donner = $postData;
+					foreach($donner as $ligne)
+					{
+				?>
+				
+					<tr id="post<?=$ligne['id'] ?>">
+						<th scope="row"> <?=$ligne['id'] ?></th>
+						<td> <img src="../Assets/upload_image/<?=$ligne['image']?>" alt="articlImage" style=width:3rem; > </td>
+						<td> <?=$ligne['title'] ?></td>
+						<td> <?=$ligne['category'] ?> </td>
+						<td title=""><?=$ligne['description'] ?></td>
 						<td>
-							<a href="#"><button type="button" class="btn btn-outline-info">Edit</button></a>	
-							<a href="#"><button type="button" 	name="delete" class="btn btn-outline-danger">Delete</button>
+							<button type="button" onclick="getdataArticl(<?=$ligne['id']?> , `<?=$ligne['image']?>` , `<?=$ligne['title']?>` ,
+							 `<?=$ligne['cat_id']?>` , `<?=$ligne['description']?>`)"
+							 data-bs-target="#modal-edit-post" data-bs-toggle="modal"
+							 class="btn btn-outline-info">Edit</button>
+							
+
+							<a href="#"><button type="button" onclick="deleteArticl(<?=$ligne['id'] ?>)"  class="btn btn-outline-danger">Delete</button></a>
+								
 						</td>
 					</tr>
+				<?php } ?>
 				</tbody>
 			</table>
 		</div>

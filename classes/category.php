@@ -1,6 +1,5 @@
 <?php
 require_once '../config/connection.php'; 
-session_start();
 
     class Category extends Database{
         protected $id = NULL;
@@ -27,11 +26,11 @@ session_start();
             return $this->firstName ;
         }
         
-        public function getObject($dbObject)
-        {
-            $this->id = $dbObject->id;
-            $this->name = $dbObject->name;
-        }
+        // public function getObject($dbObject)
+        // {
+        //     $this->id = $dbObject->id;
+        //     $this->name = $dbObject->name;
+        // }
 
         /*********  crud category: *********/
         public function addCategory()
@@ -49,7 +48,7 @@ session_start();
             $stmt = $db->connect()->prepare($sql);
             $stmt->execute();
             $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-       
+            
             return $categories;
         }
         

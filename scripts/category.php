@@ -3,7 +3,7 @@
 
     //Routing :
     if (isset($_POST['save_cat'])) category();
-    if (isset($_POST['edit_cat'])) updateCat(); 
+    if (isset($_POST['edit_cat'])) updateCat();
     if (isset($_POST['dcategory'])) deleteCat($_POST['dcategory']);
     
     // ************** save category ****************//
