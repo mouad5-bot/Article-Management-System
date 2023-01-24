@@ -55,9 +55,9 @@ require_once '../config/connection.php';
         {
             $db = new Database();
 
-            $sql = "INSERT INTO post(image , title, category, description) VALUES(?,?,?,?)";
+            $sql = "INSERT INTO post(image, title, category , description) VALUES(?,?,?,?)";
             $conn= $db->connect()->prepare($sql);
-            $conn->execute([$this->image, $this->category, $this->title, $this->description ]);
+            $conn->execute([$this->image, $this->title,  $this->category, $this->description ]);
         }
 
         function showPosts()
@@ -73,17 +73,18 @@ require_once '../config/connection.php';
 
         
         
-        // public function update($img, $cat, $title, $des)
-        // {
-        //     $db = new Database();
-        //     $this->image = $img;
-        //     $this->category = $cat;
-        //     $this->title = $title;
-        //     $this->description = $desc;
-        //     $req = "UPDATE category SET name = ? WHERE id = ?";
-        //     $stmt = $db->connect()->prepare($req);
-        //     return $stmt->execute([$newName, $this->id]);   
-        // }
+        public function update($img, $title, $cat, $des)
+        {
+            $db = new Database();
+            $this->image = $img;
+            $this->title = $title;
+            $this->category = $cat;
+            $this->description = $des;
+            $req = "UPDATE post SET image = ?, title = ?, category = ?, description = ? WHERE id = ?";
+            $stmt = $db->connect()->prepare($req);
+            return $stmt->execute( [$img, $title, $cat, $des, $this->id]);   
+            // [$img, $title, $cat, $des, $this->id]
+        }
 
         // public function delete($id)
         // {
@@ -93,48 +94,51 @@ require_once '../config/connection.php';
         //     $stmt -> bindParam(':id',$id);
         //     $stmt->execute();
         // }
-    }
 
     function uploadimage()
         {
-            $img_name = $_FILES['image']['name'];
-            $img_size = $_FILES['image']['size'];
-            $tmp_name = $_FILES['image']['tmp_name'];
-            $error    = $_FILES['image']['error'];
-            $new_img_name = "";
-
-            if ($error === 0)
+            if (isset($_FILES['image']))
             {
-                if ($img_size > 170000) 
+                $img_name = $_FILES['image']['name'];
+                $img_size = $_FILES['image']['size'];
+                $tmp_name = $_FILES['image']['tmp_name'];
+                $error    = $_FILES['image']['error'];
+                $new_img_name = "";
+
+                if ($error === 0)
                 {
-                    $_SESSION['error'] = "Sorry, your file is too large.";
-                    header('location: ../index.php');
+                    if ($img_size > 170000) 
+                    {
+                        $_SESSION['error'] = "Sorry, your file is too large.";
+                        header('location: ../index.php');
+                    }
+                    else
+                    {
+                        // ex = extension  | lc = lowerCase 
+                        $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); 
+                        $img_ex_lc = strtolower($img_ex);
+
+                        $allowed_exs = array("jpg", "jpeg", "png"); 
+
+                        if (in_array($img_ex_lc, $allowed_exs)) 
+                        {
+                            $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                            $img_upload_path = '../Assets/upload_image/'.$new_img_name;
+                            move_uploaded_file($tmp_name, $img_upload_path);
+                        }
+                        else {
+                            $_SESSION['error'] = "You can't upload files of this type";
+                            header('location: ../index.php'); 
+                        }
+                    }
                 }
                 else
                 {
-                    // ex = extension  | lc = lowerCase 
-                    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); 
-                    $img_ex_lc = strtolower($img_ex);
-
-                    $allowed_exs = array("jpg", "jpeg", "png"); 
-
-                    if (in_array($img_ex_lc, $allowed_exs)) 
-                    {
-                        $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
-                        $img_upload_path = '../Assets/upload_image/'.$new_img_name;
-                        move_uploaded_file($tmp_name, $img_upload_path);
-                    }
-                    else {
-                        $_SESSION['error'] = "You can't upload files of this type";
-                        header('location: ../index.php'); 
-                    }
+                    $_SESSION['error'] = 'unknown error occurred!';
+                    header('location: ../index.php'); 
+                    
                 }
+                return $new_img_name;
             }
-            else
-            {
-                $_SESSION['error'] = 'unknown error occurred!';
-                header('location: ../index.php'); 
-                
-            }
-            return $new_img_name;
         }
+    }

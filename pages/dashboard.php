@@ -123,6 +123,7 @@
 					foreach($donner as $ligne)
 					{
 				?>
+				
 					<tr id="post<?=$ligne['id'] ?>">
 						<th scope="row"> <?=$ligne['id'] ?></th>
 						<td> <?=$ligne['image'] ?></td>
@@ -130,8 +131,11 @@
 						<td> <?=$ligne['category'] ?> </td>
 						<td title=""><?=$ligne['description'] ?></td>
 						<td>
-							<a href="#"><button type="button" onclick="getdataArticl(<?=$ligne['id']?> , `<?=$ligne['image']?> , <?=$ligne['title']?> , <?=$ligne['category']?> , <?=$ligne['description']?>`)" data-bs-target="#modal-edit-post" data-bs-toggle="modal"
-							class="btn btn-outline-info">Edit</button></a>
+							<button type="button" onclick="getdataArticl(<?=$ligne['id']?> , `<?=$ligne['image']?>` , `<?=$ligne['title']?>` ,
+							 `<?=$ligne['category']?>` , `<?=$ligne['description']?>`)"
+							 data-bs-target="#modal-edit-post" data-bs-toggle="modal"
+							 class="btn btn-outline-info">Edit</button>
+							
 
 							<a href="#"><button type="button" class="btn btn-outline-danger">Delete</button></a>
 								

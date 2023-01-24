@@ -11,9 +11,9 @@
 
     function saveArticle()
     {
-        $cat = new Article();   
+        $cat = new Article();
         $cat->uploadimage();
-        $cat->setTitle($_POST['title']);
+        $cat->setTitle($_POST['add_title_post']);
         $cat->setCategory($_POST['category']);
         $cat->setDescription($_POST['description']);
         $cat->addPost();
@@ -36,7 +36,7 @@
         var_dump($_POST);
         $art = new Article();
         $art->setId($_POST['id']);
-        $res= $art->update($_POST['image'], $_POST['category'], $_POST['title'], $_POST['description']);
+        $res= $art->update($_FILES['image'],  $_POST['title'], $_POST['category'], $_POST['description']);
 
         if($res) 
             header("Location: ../pages/dashboard.php");

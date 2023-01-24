@@ -12,7 +12,7 @@
 						<input type="hidden" name="id" id="articl-id">
 						<div class="mb-3">
 							<label class="form-label">Title</label>
-							<input  type="text" class="form-control" name="title" id="title"/>
+							<input  type="text" class="form-control" name="add_title_post" id="title"/>
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Category</label> 
@@ -38,7 +38,9 @@
 						</div>
 						<div class="mb-2">
 							<label class="form-label">image</label> 
-							<input type="file" class="form-control" id="inputGroupFile04" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+							<!-- <input type="file" class="form-control" id="inputGroupFile04" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload"> -->
+							<input type="file" [(ngModel)]="examen_bestand" name="examen_bestand" class="form-control" id="exampleInputFile" aria-describedby="fileHelp" (change)="fileChanged($event)">
+
 						</div>
 						<div class="mb-0">
 							<label class="form-label">Description</label>
@@ -63,12 +65,12 @@
 			<div class="modal-content">
 				<form action="../scripts/article.php" method="POST" id="form-articl" enctype="multipart/form-data">
 					<div class="modal-header">
-						<h5 class="modal-title">Add Articl</h5>
+						<h5 class="modal-title">Edit Articl</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
 						<!-- This Input Allows Storing articl Index  -->
-						<input type="hidden" name="id" id="articl-id">
+						<input type="hidden" name="id" id="id-edit-articl">
 						<div class="mb-3">
 							<label class="form-label">Title</label>
 							<input  type="text" class="form-control" name="title" id="title-edit-articl"/>
@@ -78,7 +80,6 @@
 							<select class="form-select" name="category" id="category-edit-articl">
 							    <option value="">Please select</option>
                                 <?php 
-                                    // $table = 'categorie';
                                     $data = $catData;
                                     foreach ($data as $category) {
                                         echo "<option value=".$category['id']."> $category[name] </option>";
@@ -89,7 +90,7 @@
 						</div>
 						<div class="mb-2">
 							<label class="form-label">image</label> 
-							<input type="file" class="form-control" id="image-edit-articl" value="" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+							<input type="file" class="form-control" id="image-edit-articl"  name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
 						</div>
 						<div class="mb-0">
 							<label class="form-label">Description</label>
@@ -99,7 +100,7 @@
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="save_articl"   class="btn btn-primary articl-action-btn" id="articl-save-btn">Save</button>
+						<button type="submit" name="edit_articl" class="btn btn-warning articl-action-btn" id="articl-save-btn">Edit</button>
 					</div>
 				</form>
 			</div>
